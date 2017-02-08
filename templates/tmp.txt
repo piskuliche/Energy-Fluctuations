@@ -1,0 +1,10 @@
+box_length		filename			delimiter
+40      		config_out.dat    	500
+start_time		end_time			dump_frequency
+0   			20000				50
+ncorr			nskip				n_bin
+400 			20000				1
+skip_top_of_file		skip_between_file
+9						0
+number_of_molecules		molecule_type
+832						3
