@@ -22,24 +22,28 @@ echo -e "  [3] Run the Transport Calculations\n"
 echo -e "  [4] Calculate the Activation Energies\n"
 read STEP
 
+# First Step: Run the Simulations:
 if   (( "$STEP" == "1" )); then
     echo -e "Running the Simulations."
     cp src/run_energy_flucts.sh ./
     chmod 777 run_energy_flucts.sh
     ./run_energy_flucts.sh $STARTCONFIG $ENDCONFIG $SEPARATION $PREFIX
     rm run_energy_flucts.sh
+# Second Step: Calculate the Initial Energies
 elif (( "$STEP" == "2" )); then
     echo -e "Checking the Initial Energies"
     cp src/check_energy_flucts.sh ./
     chmod 777 check_energy_flucts.sh
     ./check_energy_flucts.sh $STARTCONFIG $ENDCONFIG $SEPARATION
     rm check_energy_flucts.sh
+# Third Step: Run The Transport Calculations
 elif (( "$STEP" == "3" )); then
     echo -e "Running the Transport Calculations"
     cp src/tspt_pure_energy_flucts.sh ./
     chmod 777 tspt_pure_energy_flucts.sh
     ./tspt_pure_energy_flucts.sh $STARTCONFIG $ENDCONFIG $SEPARATION
     rm tspt_pure_energy_flucts.sh
+# Fourth Step: Calculate Activation Energies
 elif (( "$STEP" == "4" )); then
     echo -e "Calculating the Activation Energies"
     cp src/calc_activation_energy.py ./
