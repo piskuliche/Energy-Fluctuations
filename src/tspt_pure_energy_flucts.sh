@@ -32,7 +32,7 @@ do
     mv tspt.$VAL.sh $j/
     # Changes directory into the folder, submits the transport calculation, changes directory back out again.
     cd $j
-    qsub tspt.$VAL.sh
+    msub tspt.$VAL.sh
     cd ..
 done
 

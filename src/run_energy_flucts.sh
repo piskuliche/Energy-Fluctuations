@@ -37,7 +37,7 @@ do
     mv config.$VAL.* $i/
     # Changes directory to the config folder, submits the job, then changes directory back to main directory.
     cd $i
-    qsub config.$VAL.sh
+    msub config.$VAL.sh
     cd ..
 done
 
